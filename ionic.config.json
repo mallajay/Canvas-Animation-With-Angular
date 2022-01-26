@@ -1,0 +1,7 @@
+{
+  "name": "request-animation-frame",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
