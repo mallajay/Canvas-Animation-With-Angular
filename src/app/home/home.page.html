@@ -1,20 +1,120 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Animation </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="4" size-xl="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> Simple Text Animation </ion-card-title>
+            <ion-card-subtitle>
+              Request Animation Frame Demo
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p #textAnimation id="ani">Hello</p>
+          </ion-card-content>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+          <ion-card-header>
+            <ion-button
+              (click)="textAnimationFunction()"
+              color="tertiary"
+              expand="block"
+              *ngIf="!isAnimationStarted[0]"
+            >
+              <ion-label> Start Animation </ion-label>
+            </ion-button>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="4" size-xl="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title> Simple Canvas Animation </ion-card-title>
+          </ion-card-header>
+
+          <div #cardContent>
+            <ion-card-content>
+              <!-- <canvas
+                style="
+                  width: 100%;
+                  position: absolute;
+                  z-index: 10;
+                  left: 0px;
+                  background: transparent !important;
+                  right: 0;
+                  height: 113px;
+                  top: 0px;
+                "
+                #simpleCanAni
+              ></canvas> -->
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Commodi repellat amet tempora provident dicta obcaecati,
+                praesentium nam voluptate quos ratione! Dignissimos nam neque
+                consectetur esse ducimus ipsa dolores beatae et?
+              </p>
+            </ion-card-content>
+          </div>
+
+          <ion-card-header>
+            <ion-button
+              (click)="simpleCanvasAnimationFunction()"
+              color="tertiary"
+              expand="block"
+              *ngIf="!isAnimationStarted[1]"
+            >
+              <ion-label> Start Animation </ion-label>
+            </ion-button>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              Canvas Animation With HTTP X and Y
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div
+              style="
+                height: 300px;
+                display: grid;
+                place-items: center;
+                width: 100%;
+              "
+            >
+              <video
+                style="width: 100%; height: 280px; cursor: pointer"
+                src="assets/video/screen_recording.webm"
+              ></video>
+            </div>
+            <canvas
+              style="
+                width: 100%;
+                position: absolute;
+                z-index: 10;
+                left: 0px;
+                background: transparent !important;
+                right: 0;
+                height: 280 px;
+                top: 0px;
+              "
+              #simpleCanAni
+            ></canvas>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
